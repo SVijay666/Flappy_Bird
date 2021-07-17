@@ -112,13 +112,13 @@ def mainGame():
             upperPipe['x'] += pipeVelX
             lowerPipe['x'] += pipeVelX
 
-        # Add a new pipe when the first is about to cross the leftmost part of the screen
+        # addition of a new pipe
         if 0<upperPipes[0]['x']<5:
             newpipe = getRandomPipe()
             upperPipes.append(newpipe[0])
             lowerPipes.append(newpipe[1])
 
-        # if the pipe is out of the screen, remove it
+        # removal of pipes
         if upperPipes[0]['x'] < -GAME_SPRITES['pipe'][0].get_width():
             upperPipes.pop(0)
             lowerPipes.pop(0)
@@ -182,7 +182,7 @@ def getRandomPipe():
 if __name__ == "__main__":
     pygame.init() # Initialize all pygame's modules
     FPSCLOCK = pygame.time.Clock()
-    pygame.display.set_caption('Flappy Bird by CodeWithHarry')
+    pygame.display.set_caption('Flappy Bird')
     GAME_SPRITES['numbers'] = ( 
         pygame.image.load('gallery/sprites/0.png').convert_alpha(),
         pygame.image.load('gallery/sprites/1.png').convert_alpha(),
